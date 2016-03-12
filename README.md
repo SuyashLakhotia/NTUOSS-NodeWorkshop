@@ -255,3 +255,28 @@ Node.js is an open source, cross-platform runtime environment for server-side Ja
 
 - For Windows users, please use *Git Bash* that comes installed with *Git* to emulate the UNIX commands used throughout the workshop.
 
+## Task 3 - REPL
+REPL or Read-Evaluate-Print-Loop provides a way to interactively run JavaScript and see the results. It's very useful for debugging, testing or just trying things out.
+
+Start up the REPL by typing in `node` in your command line.
+```Bash
+$ node
+```
+
+Then, try out the following JavaScript commands to become familiar with REPL:
+```BASH
+> var a = [1, 2, 3];
+
+> console.log(a);
+[ 1, 2, 3 ]
+
+> a.forEach(function (z) { console.log(z); });
+1
+2
+3
+```
+
+Ignore the *undefined* statements you see when you type in each command.
+
+Exit REPL by typing `.exit` or pressing `Ctrl` + `D`.
+
