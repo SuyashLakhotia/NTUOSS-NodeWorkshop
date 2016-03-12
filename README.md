@@ -310,3 +310,78 @@ You should see the following output on Terminal:
 Hello, NTUOSS!
 ```
 
+## Task 5 - require()
+#### The Module System
+- Makes it possible to include other JavaScript files into your app.
+- Helps organize your code into separate parts with limited responsibilities.
+- Using modules is simple. You just `require()` them.
+
+In the `hello` folder, create a new file called `greet.js` and open it:
+```
+$ touch greet.js
+$ subl greet.js
+```
+
+Type the following lines into `greet.js`:
+
+**greet.js**
+```js
+exports.hello = function () {
+	return "Hello, NTUOSS!";
+}
+```
+Next, open up `index.js` file and modify it so it looks like:
+
+**index.js**
+```js
+var greet = require('./greet.js');
+console.log(greet.hello());
+```
+
+Execute your application by running:
+```Bash
+$ node index.js
+```
+
+The output should remain the same as before.
+
+Next, modify `greet.js` & `index.js` as follows:
+
+**greet.js**
+```js
+exports.hello = function () {
+    return "Hello, NTUOSS!";
+}
+
+exports.konichiwa = function () {
+    return "Konichiwa, NTUOSS!";
+}
+```
+
+**index.js**
+```js
+var greet = require('./greet.js');
+console.log(greet.hello());
+console.log(greet.konichiwa());
+```
+
+Execute your application. The output should be as follows:
+```Bash
+Hello, NTUOSS!
+Konichiwa, NTUOSS!
+```
+
+Another way of handling exports is as follows:
+
+**greet.js**
+```javascript
+module.exports = {
+	hello: function () {
+		return "Hello, NTUOSS!";
+	},
+	konichiwa: function () {
+		return "Konichiwa, NTUOSS!";
+	}
+}
+```
+
