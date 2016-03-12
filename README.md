@@ -280,3 +280,33 @@ Ignore the *undefined* statements you see when you type in each command.
 
 Exit REPL by typing `.exit` or pressing `Ctrl` + `D`.
 
+## Task 4 - Hello World
+Create a folder titled `hello` and go into it:
+```
+$ mkdir hello
+$ cd hello
+```
+
+Next, create an empty `index.js` file in that folder and open it in Sublime Text:
+```Bash
+$ touch index.js
+$ subl index.js
+```
+
+Type the following into `index.js`:
+
+**index.js**
+```js
+console.log("Hello, NTUOSS!");
+```
+
+Save and exit the file. Execute your application by running the following command:
+```Bash
+$ node index.js
+```
+
+You should see the following output on Terminal:
+```Bash
+Hello, NTUOSS!
+```
+
