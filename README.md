@@ -221,7 +221,7 @@ setTimeout(function() {
 
 ## Task 1 - Practicing Basic JavaScript
 ### Running JavaScript
-Unlike most languages, JavaScript runs only on a web browser. In order to test your JavaScript code, use the *JavaScript Console* provided by Google Chrome (ALT + CMD + J on Mac).
+Unlike most languages, JavaScript runs only on a web browser. In order to test your JavaScript code, use the *JavaScript Console* provided by Google Chrome (`Alt` + `Cmd` + `J` on Mac).
 
 ### Task 1.1
 Write a program that uses `console.log` to print all the numbers from 1 to 100 with two conditions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 3 and 5, print "FizzBuzz".
@@ -238,4 +238,3 @@ Define a function `add` that takes in two numbers as parameters and a third `cal
 ### Solutions
 Solutions are available [here](/Task 1 Solutions/).
 
-## Task 2 - 
