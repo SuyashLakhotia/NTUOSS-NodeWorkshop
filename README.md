@@ -238,3 +238,20 @@ Define a function `add` that takes in two numbers as parameters and a third `cal
 ### Solutions
 Solutions are available [here](/Task 1 Solutions/).
 
+## Task 2 - Introduction to Node.js
+### What is Node.js?
+Node.js is an open source, cross-platform runtime environment for server-side JavaScript applications.
+
+### When to use Node.js?
+- JSON based REST APIs
+- Web / Mobile-Web Apps
+- Network Apps
+- *Not for CPU intensive work.*
+
+### Setup
+1. Install [Node.js](https://nodejs.org/).
+2. Install [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) if you haven't already.
+3. Get a text editor. I recommend either [Sublime Text](http://www.sublimetext.com/) or [Atom](https://atom.io/).
+
+- For Windows users, please use *Git Bash* that comes installed with *Git* to emulate the UNIX commands used throughout the workshop.
+
