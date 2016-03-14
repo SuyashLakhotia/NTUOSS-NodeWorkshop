@@ -287,12 +287,14 @@ Node.js is an open source, cross-platform runtime environment for server-side Ja
 REPL or Read-Evaluate-Print-Loop provides a way to interactively run JavaScript and see the results. It's very useful for debugging, testing or just trying things out.
 
 Start up the REPL by typing in `node` in your command line.
+
 ```Bash
 $ node
 ```
 
 Then, try out the following JavaScript commands to become familiar with REPL:
-```BASH
+
+```Bash
 > var a = [1, 2, 3];
 
 > console.log(a);
@@ -310,12 +312,14 @@ Exit REPL by typing `.exit` or pressing `Ctrl` + `D`.
 
 ## Task 4 - Hello World
 Create a folder titled `hello` and go into it:
-```
+
+```Bash
 $ mkdir hello
 $ cd hello
 ```
 
 Next, create an empty `index.js` file in that folder and open it in Sublime Text:
+
 ```Bash
 $ touch index.js
 $ subl index.js
@@ -324,16 +328,19 @@ $ subl index.js
 Type the following into `index.js`:
 
 **index.js**
+
 ```js
 console.log("Hello, NTUOSS!");
 ```
 
 Save and exit the file. Execute your application by running the following command:
+
 ```Bash
 $ node index.js
 ```
 
 You should see the following output on Terminal:
+
 ```Bash
 Hello, NTUOSS!
 ```
@@ -345,7 +352,8 @@ Hello, NTUOSS!
 - Using modules is simple. You just `require()` them.
 
 In the `hello` folder, create a new file called `greet.js` and open it:
-```
+
+```Bash
 $ touch greet.js
 $ subl greet.js
 ```
@@ -353,6 +361,7 @@ $ subl greet.js
 Type the following lines into `greet.js`:
 
 **greet.js**
+
 ```js
 exports.hello = function () {
 	return "Hello, NTUOSS!";
@@ -361,12 +370,14 @@ exports.hello = function () {
 Next, open up `index.js` file and modify it so it looks like:
 
 **index.js**
+
 ```js
 var greet = require('./greet.js');
 console.log(greet.hello());
 ```
 
 Execute your application by running:
+
 ```Bash
 $ node index.js
 ```
@@ -376,6 +387,7 @@ The output should remain the same as before.
 Next, modify `greet.js` & `index.js` as follows:
 
 **greet.js**
+
 ```js
 exports.hello = function () {
     return "Hello, NTUOSS!";
@@ -387,6 +399,7 @@ exports.konichiwa = function () {
 ```
 
 **index.js**
+
 ```js
 var greet = require('./greet.js');
 console.log(greet.hello());
@@ -394,6 +407,7 @@ console.log(greet.konichiwa());
 ```
 
 Execute your application. The output should be as follows:
+
 ```Bash
 Hello, NTUOSS!
 Konichiwa, NTUOSS!
@@ -402,7 +416,8 @@ Konichiwa, NTUOSS!
 Another way of handling exports is as follows:
 
 **greet.js**
-```javascript
+
+```js
 module.exports = {
 	hello: function () {
 		return "Hello, NTUOSS!";
@@ -422,6 +437,7 @@ Node.js also provides a rich library of various JavaScript modules which simplif
 In your `hello` folder, create a text file with the following contents:
 
 **log.txt**
+
 ```
 2016-08-09T13:50:33.166Z A 2
 2016-08-09T13:51:33.166Z B 1
@@ -435,6 +451,7 @@ What this log data means is not important, but basically each message contains a
 The first thing we need to do is read the contents of the file. We can do this using the `fs` module provided by Node.js. Create a new file titled `my_parser.js` and type in the following:
 
 **my_parser.js**
+
 ```js
 // Load the fs (filesystem) module:
 var fs = require('fs');
