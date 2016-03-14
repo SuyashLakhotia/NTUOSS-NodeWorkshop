@@ -516,3 +516,114 @@ Congratulations! You've just built your very own web server!
 Quit your app using `Ctrl` + `C`.
 
 If you want this to be a full-featured web server, then you have to check what was requested, read the appropriate files and send the content back. There's good news, though. People have already done this hard work for you.
+
+## Task 8 - Express
+[Express](http://expressjs.com/) is a framework to help build web applications. The first thing you have to do it install it. Along with the `node` command, you also have access to a command called `npm`. This tool gives you access to an enormous collection of modules created by the community and one of them is Express.
+
+Navigate to your `hello` folder on Terminal and install Express (and its dependencies):
+
+```Bash
+$ cd path/to/hello
+$ npm install express # ignore the warnings for now
+```
+
+When you install a module, it will put it in a `node_modules` folder inside your application directory. You can now `require()` it like any built-in module. Let's create a basic static file server using Express.
+
+**index.js**
+
+```js
+var express = require('express'),
+    app = express();
+
+app.use(express.static(__dirname + '/public'));
+
+app.listen(8000);
+
+console.log("Server running at http://127.0.0.1:8000.");
+```
+
+```Bash
+$ mkdir public
+$ node index.js
+```
+
+You now have a pretty capable static file server. Anything you put in the `/public` folder can now be requested by your browser and displayed. HTML, images, almost anything. For example, if you put an image called `image.png` inside the public folder, you can access it using your browser by going to [http://localhost:8000/image.png](http://localhost:8080/image.png). Of course Express has many many more features, but you can look those up as you continue developing.
+
+## Task 9 - NPM
+So, what is `npm` exactly?
+
+1. [A module registry](https://www.npmjs.com), containing a collection of open-source code.
+2. A standard, to define dependencies on other packages.
+3. A package manager, for locally installed packages.
+
+`npm` is an extremely important tool for Node.js development. There are thousands of modules available that solve almost all typical problems that you're likely to encounter.
+
+Remember the warnings when we were installing Express? Let's fix that by initializing our Node.js app.
+
+```Bash
+$ npm init
+name: (hello)
+version: (1.0.0)
+description: Hello World
+entry point: (index.js)
+test command:
+git repository:
+keywords: helloworld
+author: Suyash Lakhotia
+license: (ISC)
+```
+
+Initializing the app creates a `package.json` file, which contains an overview of your application.
+
+**package.json**
+
+```json
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "Hello World",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "helloworld"
+  ],
+  "author": "Suyash Lakhotia",
+  "license": "ISC"
+}
+```
+
+The dependencies section describes the name and version of the modules you'd like to install. `npm` automatically detects Express as a dependency and lists it down for you. You can list as many dependencies as you want in this section.
+
+Now, instead of installing each dependency separately, we can run a single command and install all of them.
+
+```Bash
+$ npm install
+```
+
+When you run this command, `npm` will look in the current folder for a `package.json` file. If it finds one, it will install every dependency listed.
+
+To make sure a dependency is listed in `package.json` whenever you install a new module in your app, use `--save`.
+
+```Bash
+$ npm install --save <module-name>
+```
+
+In `package.json`, add the following to make sure you don't publish your app onto the `npm` registry by accident:
+
+**package.json**
+
+```json
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hello World",
+  ...
+}
+```
