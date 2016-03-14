@@ -643,3 +643,87 @@ In `package.json`, add the following to make sure you don't publish your app ont
   ...
 }
 ```
+
+
+## Task 10 - Building an API Server
+Let's build a simple API server to list and save tasks. Create a new folder called `tasks` and go into it:
+
+```
+$ mkdir tasks && cd tasks
+```
+
+Initialize the project:
+
+```
+$ npm init
+```
+
+Import `express`, `express-session` and `body-parser` into your project:
+
+```
+$ npm install --save express express-session body-parser
+```
+
+Finally, create an empty file called `index.js` and type the following:
+
+```
+$ touch index.js && subl index.js
+```
+
+**index.js**
+
+```js
+var express = require('express');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var app = express();
+
+// Middleware for handling session/cookies:
+app.use(session({secret: 'ntu-oss', resave: true, saveUninitialized: true}));
+
+// Middleware for handling the POST requests:
+app.use(bodyParser.urlencoded({extended: false}));
+
+// In real life, this is usually some form of DB call:
+function initializeTasks() {
+    var tasks = [];
+    tasks.push('Step 1: Learn Node');
+    tasks.push('Step 2: Learn NPM');
+    tasks.push('Step 3: Learn Express');
+    return tasks;
+}
+
+app.get('/', function (req, res) {
+    if (!req.session.tasks) {
+        // Tasks not found in session, so initialize it with an array of tasks:
+        req.session.tasks = initializeTasks();
+    }
+
+    // Return a JSON object with an array of tasks:
+    res.json({tasks: req.session.tasks});
+});
+
+app.post('/task', function (req, res) {
+    if (!req.session.tasks) {
+        // Tasks not found in session, so initialize it with an array of tasks:
+        req.session.tasks = initializeTasks();
+    }
+
+    // Assign the POSTed task to the newTask variable:
+    var newTask = req.body.task;
+
+    // Save the new task to the session array of tasks:
+    req.session.tasks.push(newTask);
+
+    // Return a JSON object with an array of tasks:
+    res.json({tasks: req.session.tasks});
+});
+
+app.listen(3000, function () {
+    console.log("API server started on port 3000.");
+});
+```
+
+This time around, after `node index.js`, you'll need to access your API server on port 3000.
+
+While you can view the list of tasks via your browser ([http://localhost:3000](http://localhost:3000)), it's best to use an application like [Postman](https://www.getpostman.com/features) to fully test both the **GET** and **POST** functions of your app.
