@@ -413,3 +413,63 @@ module.exports = {
 }
 ```
 
+## Task 6 - File I/O
+Node.js also provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent. It ships with a number of core modules. Some examples are:
+- `console`: Sends output to stdout or stderr.
+- `http`: Provides a server and client for HTTP traffic.
+- `fs`: Provides functions to interact with the file system.
+
+In your `hello` folder, create a text file with the following contents:
+
+**log.txt**
+```
+2016-08-09T13:50:33.166Z A 2
+2016-08-09T13:51:33.166Z B 1
+2016-08-09T13:52:33.166Z C 6
+2016-08-09T13:53:33.166Z B 8
+2016-08-09T13:54:33.166Z B 5
+```
+
+What this log data means is not important, but basically each message contains a date, a letter and a value. Let's add up the values for each letter.
+
+The first thing we need to do is read the contents of the file. We can do this using the `fs` module provided by Node.js. Create a new file titled `my_parser.js` and type in the following:
+
+**my_parser.js**
+```js
+// Load the fs (filesystem) module:
+var fs = require('fs');
+
+// Read the contents of the file into memory:
+fs.readFile('example_log.txt', function (err, logData) {
+
+    // If an error occurred, throwing it will
+    // display the exception and end our app.
+    if (err) throw err;
+
+    // logData is a Buffer, convert to string.
+    var text = logData.toString();
+});
+```
+
+
+## Task 7 - Building a Web Server (`http`)
+Edit `index.js` as follows:
+
+**index.js**
+```js
+var http = require('http');
+var greet = require('./greet.js');
+
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end(greet.hello());
+}).listen(8000);
+
+console.log("Server running at http://127.0.0.1:8000.");
+```
+
+Execute your app using `node index.js` and navigate to `http://127.0.0.1:8000` on your preferred web browser.
+
+Congratulations! You've just built your very own web server!
+
+Quit your app using `Ctrl` + `C`.
