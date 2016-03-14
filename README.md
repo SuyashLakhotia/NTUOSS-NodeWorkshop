@@ -295,13 +295,13 @@ REPL or Read-Evaluate-Print-Loop provides a way to interactively run JavaScript 
 
 Start up the REPL by typing in `node` in your command line.
 
-```Bash
+```
 $ node
 ```
 
 Then, try out the following JavaScript commands to become familiar with REPL:
 
-```Bash
+```
 > var a = [1, 2, 3];
 
 > console.log(a);
@@ -321,14 +321,14 @@ Exit REPL by typing `.exit` or pressing `Ctrl` + `D`.
 ## Task 4 - Hello World
 Create a folder titled `hello` and go into it:
 
-```Bash
+```
 $ mkdir hello
 $ cd hello
 ```
 
 Next, create an empty `index.js` file in that folder and open it in Sublime Text:
 
-```Bash
+```
 $ touch index.js
 $ subl index.js
 ```
@@ -343,13 +343,13 @@ console.log("Hello, NTUOSS!");
 
 Save and exit the file. Execute your application by running the following command:
 
-```Bash
+```
 $ node index.js
 ```
 
 You should see the following output on Terminal:
 
-```Bash
+```
 Hello, NTUOSS!
 ```
 
@@ -364,7 +364,7 @@ Hello, NTUOSS!
 
 In the `hello` folder, create a new file called `greet.js` and open it:
 
-```Bash
+```
 $ touch greet.js
 $ subl greet.js
 ```
@@ -389,7 +389,7 @@ console.log(greet.hello());
 
 Execute your application by running:
 
-```Bash
+```
 $ node index.js
 ```
 
@@ -419,7 +419,7 @@ console.log(greet.konichiwa());
 
 Execute your application. The output should be as follows:
 
-```Bash
+```
 Hello, NTUOSS!
 Konichiwa, NTUOSS!
 ```
@@ -486,7 +486,7 @@ fs.readFile('log.txt', function (err, logData) {
 The `fs` module has a function named `readFile` that takes a file path and a callback. The callback will be invoked when the file is done being read. The file data comes in the form of a Buffer, which is basically a byte array. We can convert it to a string using the `toString()` function.
 
 Execute the file:
-```Bash
+```
 $ node my_parser.js
 2016-08-09T13:50:33.166Z A 2
 2016-08-09T13:51:33.166Z B 1
@@ -536,7 +536,7 @@ If you want this to be a full-featured web server, then you have to check what w
 
 Navigate to your `hello` folder on Terminal and install Express (and its dependencies):
 
-```Bash
+```
 $ cd path/to/hello
 $ npm install express # ignore the warnings for now
 ```
@@ -556,7 +556,7 @@ app.listen(8000);
 console.log("Server running at http://127.0.0.1:8000.");
 ```
 
-```Bash
+```
 $ mkdir public
 $ node index.js
 ```
@@ -575,7 +575,7 @@ So, what is `npm` exactly?
 
 Remember the warnings when we were installing Express? Let's fix that by initializing our Node.js app.
 
-```Bash
+```
 $ npm init
 name: (hello)
 version: (1.0.0)
@@ -618,7 +618,7 @@ The dependencies section describes the name and version of the modules you'd lik
 
 Now, instead of installing each dependency separately, we can run a single command and install all of them.
 
-```Bash
+```
 $ npm install
 ```
 
@@ -626,7 +626,7 @@ When you run this command, `npm` will look in the current folder for a `package.
 
 To make sure a dependency is listed in `package.json` whenever you install a new module in your app, use `--save`.
 
-```Bash
+```
 $ npm install --save <module-name>
 ```
 
