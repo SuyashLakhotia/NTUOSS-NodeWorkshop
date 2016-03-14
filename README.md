@@ -244,8 +244,13 @@ Callbacks are extremely useful for asynchronous programming and are typically us
 ```js
 setTimeout(function() {
     console.log(new Date())
-}, 1000); // calls functions after 1 sec
+}, 1000);
+
+console.log("Callbacks are awesome.");
 ```
+
+Notice that "Callbacks are awesome." is printed before the date even though the line of code comes after. This is what makes callbacks unique & extremely useful.
+
 
 ## Task 1 - Practicing Basic JavaScript
 ### Running JavaScript
@@ -351,8 +356,8 @@ Hello, NTUOSS!
 
 ## Task 5 - `require()`
 #### The Module System
-- Makes it possible to include other JavaScript files into your app.
 - Helps organize your code into separate parts with limited responsibilities.
+- Makes it possible to include other JavaScript files into your app.
 - Using modules is simple. You just `require()` them.
 
 <br>
@@ -491,7 +496,7 @@ $ node my_parser.js
 ```
 
 ### Asynchronous Callbacks
-As can be seen above, the typical pattern in Node.js is to use asynchronous callbacks. Basically you're telling it to do something and when it's done, it will call your function (callback). This is because Node is single-threaded. While you're waiting on the callback to fire, Node can go off and do other things instead of blocking until the request is finished.
+As can be seen above, the typical pattern in Node.js is to use asynchronous callbacks. Basically you're telling Node to do something and when it's done, Node will call your function (callback). This is because Node is single-threaded. While you're waiting on the callback to fire, Node can go off and do other things instead of blocking until the request is finished.
 
 This is especially important for web servers. It's pretty common in modern web applications to access databases. While you're waiting for the database to return results, Node can process more requests. This allows you to handle thousands of concurrent connections with very little overhead in contrast to creating a separate thread for each connection.
 
@@ -574,11 +579,11 @@ Remember the warnings when we were installing Express? Let's fix that by initial
 $ npm init
 name: (hello)
 version: (1.0.0)
-description: Hello World
+description: Hello World App
 entry point: (index.js)
 test command:
 git repository:
-keywords: helloworld
+keywords: hello world
 author: Suyash Lakhotia
 license: (ISC)
 ```
@@ -591,7 +596,7 @@ Initializing the app creates a `package.json` file, which contains an overview o
 {
   "name": "hello",
   "version": "1.0.0",
-  "description": "Hello World",
+  "description": "Hello World App",
   "main": "index.js",
   "dependencies": {
     "express": "^4.13.4"
@@ -601,7 +606,8 @@ Initializing the app creates a `package.json` file, which contains an overview o
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "helloworld"
+    "hello",
+    "world"
   ],
   "author": "Suyash Lakhotia",
   "license": "ISC"
@@ -633,7 +639,7 @@ In `package.json`, add the following to make sure you don't publish your app ont
   "name": "hello",
   "version": "1.0.0",
   "private": true,
-  "description": "Hello World",
+  "description": "Hello World App",
   ...
 }
 ```
