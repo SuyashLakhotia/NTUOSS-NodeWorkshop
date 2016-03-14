@@ -279,7 +279,7 @@ Node.js is an open source, cross-platform runtime environment for server-side Ja
 ### Setup
 1. Install [Node.js](https://nodejs.org/).
 2. Install [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) if you haven't already.
-3. Get a text editor. I recommend either [Sublime Text](http://www.sublimetext.com/) or [Atom](https://atom.io/).
+3. Get a text editor. I recommend either [Sublime Text](http://www.sublimetext.com/) or [Atom](https://atom.io/). *Install the command line tools for your preferred text editor to open files/directories quicker.*
 
 - For Windows users, please use *Git Bash* that comes installed with *Git* to emulate the UNIX commands used throughout the workshop.
 
