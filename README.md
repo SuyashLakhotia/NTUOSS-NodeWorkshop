@@ -266,6 +266,7 @@ Define a function `add` that takes in two numbers as parameters and a third `cal
 ### Solutions
 Solutions are available [here](/Task 1 Solutions/).
 
+
 ## Task 2 - Introduction to Node.js
 ### What is Node.js?
 Node.js is an open source, cross-platform runtime environment for server-side JavaScript applications.
@@ -282,6 +283,7 @@ Node.js is an open source, cross-platform runtime environment for server-side Ja
 3. Get a text editor. I recommend either [Sublime Text](http://www.sublimetext.com/) or [Atom](https://atom.io/). *Install the command line tools for your preferred text editor to open files/directories quicker.*
 
 - For Windows users, please use *Git Bash* that comes installed with *Git* to emulate the UNIX commands used throughout the workshop.
+
 
 ## Task 3 - REPL
 REPL or Read-Evaluate-Print-Loop provides a way to interactively run JavaScript and see the results. It's very useful for debugging, testing or just trying things out.
@@ -309,6 +311,7 @@ Then, try out the following JavaScript commands to become familiar with REPL:
 Ignore the *undefined* statements you see when you type in each command.
 
 Exit REPL by typing `.exit` or pressing `Ctrl` + `D`.
+
 
 ## Task 4 - Hello World
 Create a folder titled `hello` and go into it:
@@ -345,11 +348,14 @@ You should see the following output on Terminal:
 Hello, NTUOSS!
 ```
 
-## Task 5 - require()
+
+## Task 5 - `require()`
 #### The Module System
 - Makes it possible to include other JavaScript files into your app.
 - Helps organize your code into separate parts with limited responsibilities.
 - Using modules is simple. You just `require()` them.
+
+<br>
 
 In the `hello` folder, create a new file called `greet.js` and open it:
 
@@ -428,6 +434,7 @@ module.exports = {
 }
 ```
 
+
 ## Task 6 - File I/O
 Node.js also provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent. It ships with a number of core modules. Some examples are:
 - `console`: Sends output to stdout or stderr.
@@ -488,6 +495,7 @@ As can be seen above, the typical pattern in Node.js is to use asynchronous call
 
 This is especially important for web servers. It's pretty common in modern web applications to access databases. While you're waiting for the database to return results, Node can process more requests. This allows you to handle thousands of concurrent connections with very little overhead in contrast to creating a separate thread for each connection.
 
+
 ## Task 7 - Building a Simple Web Server (`http`)
 Another useful built-in module is `http`, which makes it easy to create a simple HTTP server.
 
@@ -516,6 +524,7 @@ Congratulations! You've just built your very own web server!
 Quit your app using `Ctrl` + `C`.
 
 If you want this to be a full-featured web server, then you have to check what was requested, read the appropriate files and send the content back. There's good news, though. People have already done this hard work for you.
+
 
 ## Task 8 - Express
 [Express](http://expressjs.com/) is a framework to help build web applications. The first thing you have to do it install it. Along with the `node` command, you also have access to a command called `npm`. This tool gives you access to an enormous collection of modules created by the community and one of them is Express.
@@ -548,6 +557,7 @@ $ node index.js
 ```
 
 You now have a pretty capable static file server. Anything you put in the `/public` folder can now be requested by your browser and displayed. HTML, images, almost anything. For example, if you put an image called `image.png` inside the public folder, you can access it using your browser by going to [http://localhost:8000/image.png](http://localhost:8080/image.png). Of course Express has many many more features, but you can look those up as you continue developing.
+
 
 ## Task 9 - NPM
 So, what is `npm` exactly?
