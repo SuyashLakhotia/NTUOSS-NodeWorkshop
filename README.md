@@ -446,7 +446,7 @@ In your `hello` folder, create a text file with the following contents:
 2016-08-09T13:54:33.166Z B 5
 ```
 
-What this log data means is not important, but basically each message contains a date, a letter and a value. Let's add up the values for each letter.
+What this log data means is not important, but basically each message contains a date, a letter and a value.
 
 The first thing we need to do is read the contents of the file. We can do this using the `fs` module provided by Node.js. Create a new file titled `my_parser.js` and type in the following:
 
@@ -457,7 +457,7 @@ The first thing we need to do is read the contents of the file. We can do this u
 var fs = require('fs');
 
 // Read the contents of the file into memory:
-fs.readFile('example_log.txt', function (err, logData) {
+fs.readFile('log.txt', function (err, logData) {
 
     // If an error occurred, throwing it will
     // display the exception and end our app.
@@ -465,9 +465,28 @@ fs.readFile('example_log.txt', function (err, logData) {
 
     // logData is a Buffer, convert to string.
     var text = logData.toString();
+
+    // Print the contents of the log.
+    console.log(text);
 });
 ```
 
+The `fs` module has a function named `readFile` that takes a file path and a callback. The callback will be invoked when the file is done being read. The file data comes in the form of a Buffer, which is basically a byte array. We can convert it to a string using the `toString()` function.
+
+Execute the file:
+```Bash
+$ node my_parser.js
+2016-08-09T13:50:33.166Z A 2
+2016-08-09T13:51:33.166Z B 1
+2016-08-09T13:52:33.166Z C 6
+2016-08-09T13:53:33.166Z B 8
+2016-08-09T13:54:33.166Z B 5
+```
+
+### Asynchronous Callbacks
+As can be seen above, the typical pattern in Node.js is to use asynchronous callbacks. Basically you're telling it to do something and when it's done, it will call your function (callback). This is because Node is single-threaded. While you're waiting on the callback to fire, Node can go off and do other things instead of blocking until the request is finished.
+
+This is especially important for web servers. It's pretty common in modern web applications to access databases. While you're waiting for the database to return results, Node can process more requests. This allows you to handle thousands of concurrent connections with very little overhead in contrast to creating a separate thread for each connection.
 
 ## Task 7 - Building a Web Server (`http`)
 Edit `index.js` as follows:
