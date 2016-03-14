@@ -18,10 +18,10 @@ If you find any mistake (typo or anything else), please make a pull request or [
 
 ## Task 0 - Introduction to JavaScript
 ### What is JavaScript?
-- Object-oriented dynamic language.
-- World's most misunderstood language.
+- JavaScript is an object-oriented, high-level, untyped, interpreted, dynamic language.
+- JavaScript started as a way to make web pages more interactive. Nowadays, JavaScript runs in more places than just web browsers - it runs on web servers, phones and even robots!
 
-### Data Types
+### Types
 - Number
 - String
 - Boolean
@@ -51,7 +51,7 @@ isFinite(1/0); // false
 
 #### String
 - Made up of Unicode characters.
-- Use string of length 1 to represent characters.
+- Characters are strings of length 1.
 
 ```js
 "OSS".length; // 3
@@ -59,6 +59,12 @@ isFinite(1/0); // false
 "OSS".replace("SS", "OP"); // "OOP"
 "OSS".toLowerCase(); // "oss"
 ```
+
+#### Boolean
+- `true` or `false`
+- Any value can be converted into boolean.
+    - `false`, `0`, `NaN`, `null`, `undefined` ---> false
+    - Everything else ---> true
 
 #### null and undefined
 - *null*: Deliberate non-value.
@@ -72,11 +78,28 @@ var x;
 console.log(x); // undefined
 ```
 
-#### Boolean
-- `true` or `false`
-- Any value can be converted into boolean.
-    - `false`, `0`, `NaN`, `null`, `undefined` ---> false
-    - Everything else ---> true
+### Arrays
+#### Creation
+```js
+var a = new Array();
+a[0] = "cat";
+a[1] = "dog";
+a.length; // 2
+
+// OR
+
+var a = ["cat", "dog"];
+a[1]; // "dog"
+a[10] = "mouse";
+a[10]; // "mouse"
+a[5]; // undefined
+```
+
+#### Appending a Value
+```js
+var a = ["cat", "dog"];
+a.push("bird"); // returns 3
+```
 
 ### Operators
 - **Arithmetic:** +, -, \*, /, %, ++, --
@@ -131,48 +154,6 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
-### Objects
-- Simply a collection of name-value pairs.
-- Similar to dictionaries in Python and HashMaps in Java.
-
-#### Creating Objects
-```js
-var dog = { breed:"labrador", color:"brown" }
-// OR
-var dog = new Object();
-dog.breed = "labrador";
-dog.color = "brown";
-```
-
-#### Get Properties
-```js
-dog.breed;
-dog["breed"];
-```
-
-#### Set Properties
-```js
-dog.breed = "labrador";
-dog["breed"] = "labrador";
-```
-
-### Arrays
-#### Creation
-```js
-var a = new Array();
-a[0] = "cat";
-a[1] = "dog";
-a.length; // 2
-
-// OR
-
-var a = ["cat", "dog"];
-a[1]; // "dog"
-a[10] = "mouse";
-a[10]; // "mouse"
-a[5]; // undefined
-```
-
 ### Functions
 ```js
 function add(x, y) {
@@ -194,6 +175,33 @@ function add() {
 add(1, 2, 3, 4); // 10
 ```
 
+### Objects
+- An object is simply a collection of key-value pairs.
+- However, the order of key-value pairs is not preserved.
+
+#### Creating Objects
+```js
+var dog = { breed:"labrador", color:"brown" }
+
+// OR
+
+var dog = new Object();
+dog.breed = "labrador";
+dog.color = "brown";
+```
+
+#### Get Properties
+```js
+dog.breed;
+dog["breed"];
+```
+
+#### Set Properties
+```js
+dog.breed = "labrador";
+dog["breed"] = "labrador";
+```
+
 ### Custom Objects
 ```js
 function Person(first, last) {
@@ -208,10 +216,30 @@ var p = new Person("Barack", "Obama");
 p.fullName(); // "Barack Obama"
 ```
 
-### Callback Functions
-- A callback is a function reference.
-- Often defined in-line where it's required.
-- Typically used for "one-off" asynchronous invocations.
+### Callback
+Callbacks aren't really a feature of JavaScript like `Object` or `Array`, but instead they're a certain way to use functions. Since functions in JavaScript are a type of object, they can be passed to other functions and can even be assigned to variables. These functions can be defined previously or in-line.
+
+```js
+function a() {
+    console.log("Callback function.");
+}
+
+function b(callback) {
+    console.log("Called function.");
+
+    callback();
+
+    console.log("After callback function.")
+}
+
+b(a);
+b(function() {
+    console.log("Callback function.")
+});
+
+```
+
+Callbacks are extremely useful for asynchronous programming and are typically used for "one-off" asynchronous invocations. They can be used to signal when a particular task has been completed. For example, in the code below, the date is printed to console once `setTimeout()` waits for 1000ms.
 
 ```js
 setTimeout(function() {
@@ -221,7 +249,7 @@ setTimeout(function() {
 
 ## Task 1 - Practicing Basic JavaScript
 ### Running JavaScript
-Unlike most languages, JavaScript runs only on a web browser. In order to test your JavaScript code, use the *JavaScript Console* provided by Google Chrome (`Alt` + `Cmd` + `J` on Mac).
+Unlike most languages, JavaScript runs on a web browser. In order to test your JavaScript code, use the *JavaScript Console* provided by Google Chrome (`Alt` + `Cmd` + `J` on Mac).
 
 ### Task 1.1
 Write a program that uses `console.log` to print all the numbers from 1 to 100 with two conditions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead. For numbers that are divisible by both 3 and 5, print "FizzBuzz".
