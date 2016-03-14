@@ -488,10 +488,13 @@ As can be seen above, the typical pattern in Node.js is to use asynchronous call
 
 This is especially important for web servers. It's pretty common in modern web applications to access databases. While you're waiting for the database to return results, Node can process more requests. This allows you to handle thousands of concurrent connections with very little overhead in contrast to creating a separate thread for each connection.
 
-## Task 7 - Building a Web Server (`http`)
+## Task 7 - Building a Simple Web Server (`http`)
+Another useful built-in module is `http`, which makes it easy to create a simple HTTP server.
+
 Edit `index.js` as follows:
 
 **index.js**
+
 ```js
 var http = require('http');
 var greet = require('./greet.js');
@@ -504,8 +507,12 @@ http.createServer(function (req, res) {
 console.log("Server running at http://127.0.0.1:8000.");
 ```
 
-Execute your app using `node index.js` and navigate to `http://127.0.0.1:8000` on your preferred web browser.
+When I say a basic server, I mean **basic**. This is not a full-featured HTTP server. It can't serve any HTML file or images. In fact, no matter what you request, it will return 'Hello World'.
+
+Execute your app using `node index.js` and navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000) on your preferred web browser.
 
 Congratulations! You've just built your very own web server!
 
 Quit your app using `Ctrl` + `C`.
+
+If you want this to be a full-featured web server, then you have to check what was requested, read the appropriate files and send the content back. There's good news, though. People have already done this hard work for you.
