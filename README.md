@@ -643,7 +643,7 @@ Initializing the app creates a `package.json` file, which contains an overview o
 }
 ```
 
-The dependencies section describes the name and version of the modules you'd like to install. `npm` automatically detects Express as a dependency and lists it down for you. You can list as many dependencies as you want in this section.
+The dependencies section describes the name and version of the modules your app is dependent on. `npm` automatically detects Express as a dependency and lists it down for you. You can list as many dependencies as you want in this section.
 
 Now, instead of installing each dependency separately, we can run a single command and install all of them.
 
