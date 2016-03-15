@@ -759,7 +759,7 @@ While you can view the list of tasks via your browser ([http://localhost:3000](h
 
 
 ## Task ∞ - Going Forward
-In closing, I would just like to say that this workshop definitely does not cover everything that Node.js has to offer. To find out more Node.js, check out the links below:
+In closing, I would just like to say that this workshop definitely does not cover everything that Node.js has to offer. To find out more about Node.js, you can check out the links below:
 
 - [NodeSchool](http://nodeschool.io)
 - [Node.js on Code School](https://www.codeschool.com/courses/real-time-web-with-node-js)
