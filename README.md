@@ -727,3 +727,11 @@ app.listen(3000, function () {
 This time around, after `node index.js`, you'll need to access your API server on port 3000.
 
 While you can view the list of tasks via your browser ([http://localhost:3000](http://localhost:3000)), it's best to use an application like [Postman](https://www.getpostman.com/features) to fully test both the **GET** and **POST** functions of your app.
+
+## Task ∞ - Going Forward
+In closing, I would just like to say that this workshop definitely does not cover everything that Node.js has to offer. To find out more Node.js, check out the links below:
+
+- [NodeSchool](http://nodeschool.io)
+- [Node.js on Code School](https://www.codeschool.com/courses/real-time-web-with-node-js)
+- [Node.js on TutorialsPoint](http://www.tutorialspoint.com/nodejs/)
+- [Official Node.js Documentation](https://nodejs.org/en/docs/)
