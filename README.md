@@ -295,13 +295,13 @@ Solutions are available [here](/Task 1 Solutions/).
 
 ## Task 2 - Introduction to Node.js
 ### What is Node.js?
-Node.js is an open source, cross-platform runtime environment for server-side JavaScript applications.
+Node.js is an open source, cross-platform runtime environment for server-side JavaScript applications. It uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. 
 
 ### When to use Node.js?
-- JSON based REST APIs
+- JSON-based REST APIs
 - Web / Mobile-Web Apps
 - Network Apps
-- *Not for CPU intensive work.*
+- **NOT** for CPU intensive work
 
 ### Setup
 1. Install [Node.js](https://nodejs.org/).
@@ -312,15 +312,15 @@ Node.js is an open source, cross-platform runtime environment for server-side Ja
 
 
 ## Task 3 - REPL
-REPL or Read-Evaluate-Print-Loop provides a way to interactively run JavaScript and see the results. It's very useful for debugging, testing or just trying things out.
+REPL or Read-Evaluate-Print-Loop provides a way to interactively run JavaScript and see the results. It's useful for debugging, testing or just trying things out.
 
-Start up the REPL by typing in `node` in your command line.
+Start up the REPL by typing in `node` in Terminal:
 
 ```
 $ node
 ```
 
-Then, try out the following JavaScript commands to become familiar with REPL:
+Try out the following JavaScript commands to become familiar with REPL:
 
 ```
 > var a = [1, 2, 3];
@@ -334,7 +334,7 @@ Then, try out the following JavaScript commands to become familiar with REPL:
 3
 ```
 
-Ignore the *undefined* statements you see when you type in each command.
+Ignore the *undefined* statements you see when you type in each command for now.
 
 Exit REPL by typing `.exit` or pressing `Ctrl` + `D`.
 
