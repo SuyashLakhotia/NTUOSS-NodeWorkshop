@@ -675,7 +675,7 @@ In `package.json`, add the following to make sure you don't publish your app ont
 
 
 ## Task 10 - Building an API Server
-Let's build a simple API server to list and save tasks. Create a new folder called `tasks` and go into it:
+For our last task, let's build a simple API server to list and save tasks. Create a new folder called `tasks` and go into it:
 
 ```
 $ mkdir tasks && cd tasks
@@ -710,7 +710,7 @@ var app = express();
 // Middleware for handling session/cookies:
 app.use(session({secret: 'ntu-oss', resave: true, saveUninitialized: true}));
 
-// Middleware for handling the POST requests:
+// Middleware for handling POST requests:
 app.use(bodyParser.urlencoded({extended: false}));
 
 // In real life, this is usually some form of DB call:
@@ -755,7 +755,8 @@ app.listen(3000, function () {
 
 This time around, after `node index.js`, you'll need to access your API server on port 3000.
 
-While you can view the list of tasks via your browser ([http://localhost:3000](http://localhost:3000)), it's best to use an application like [Postman](https://www.getpostman.com/features) to fully test both the **GET** and **POST** functions of your app.
+While you can view the list of tasks via your browser ([http://localhost:3000](http://localhost:3000)) fairly easily, it's best to use an application like [Postman](https://www.getpostman.com/) to fully test the **GET** and **POST** functions of your app.
+
 
 ## Task ∞ - Going Forward
 In closing, I would just like to say that this workshop definitely does not cover everything that Node.js has to offer. To find out more Node.js, check out the links below:
