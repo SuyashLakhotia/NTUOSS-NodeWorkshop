@@ -18,28 +18,41 @@ If you find any mistake (typo or anything else), please make a pull request or [
 
 ## Task 0 - Introduction to JavaScript
 ### What is JavaScript?
-- JavaScript is an object-oriented, high-level, untyped, interpreted, dynamic language.
-- JavaScript started as a way to make web pages more interactive. Nowadays, JavaScript runs in more places than just web browsers - it runs on web servers, phones and even robots!
+- JavaScript is a cross-platform, object-oriented, high-level, untyped, interpreted & dynamic scripting language.
+- JavaScript started off as a way to make web pages more interactive since it can be connected to the objects of its host environment (a web browser, for example) to provide programmatic control over them.
+- Nowadays, JavaScript runs in more places than just web browsers. It runs on web servers, phones and even robots!
 
-### Types
-- Number
-- String
-- Boolean
-- Symbol
-- Object
+### JavaScript Basics
+- Case-sensitive.
+- Instructions are called statements, separated by semicolons (`;`).
+- Single line comments start with `//` while multi-line comments are wrapped with `/* ... */`.
+- There are only three kinds of declarations in JavaScript:
+	- `var`: Declares a variable, optionally initializing it to a value.
+	- `let`: Declares a block scope local variable, optionally initializing it to a value.
+	- `const`: Declares a read-only named constant.
+- A JavaScript identifier must start with a letter, underscore (`_`) or dollar sign (`$`). Subsequent characters can be digits (0-9).
+
+### Data Types
+- Primitive Data Types:
+	- Number
+	- String
+	- Boolean
+	- Symbol
+	- null
+	- undefined
+- Object:
     - Function
     - Array
     - Date
     - RegExp
-- null
-- undefined
 
 #### Number
 - 64-bit floating point.
 - Be careful about floating point precision.
 
 **Special Values:**
-- NaN
+
+- NaN (Not a Number)
 - Infinity
 - -Infinity
 
@@ -55,7 +68,7 @@ isFinite(1/0); // false
 
 ```js
 "OSS".length; // 3
-"OSS".charAt(0); // O
+"OSS".charAt(0); // "O"
 "OSS".replace("SS", "OP"); // "OOP"
 "OSS".toLowerCase(); // "oss"
 ```
@@ -63,16 +76,19 @@ isFinite(1/0); // false
 #### Boolean
 - `true` or `false`
 - Any value can be converted into boolean.
-    - `false`, `0`, `NaN`, `null`, `undefined` ---> false
-    - Everything else ---> true
+    - `false`, `0`, `NaN`, `null`, `undefined` → `false`
+    - Everything else → `true`
 
 #### null and undefined
-- *null*: Deliberate non-value.
+- **null**: Deliberate non-value.
+
 ```js
 var x = null;
 console.log(x); // null
 ```
-- *undefined*: Uninitialized value.
+
+- **undefined**: Uninitialized value.
+
 ```js
 var x;
 console.log(x); // undefined
@@ -86,7 +102,7 @@ a[0] = "cat";
 a[1] = "dog";
 a.length; // 2
 
-// OR
+/* OR */
 
 var a = ["cat", "dog"];
 a[1]; // "dog"
@@ -124,8 +140,8 @@ if (time < 10) {
 #### switch
 ```js
 switch (day) {
-    case 0:
     case 6:
+    case 7:
         text = "Weekend!";
         break;
     default:
@@ -134,12 +150,14 @@ switch (day) {
 }
 ```
 
-#### while & do-while
+#### while
 ```js
 while (index < 10) {
     index++;
 }
 ```
+
+#### do-while
 ```js
 var input;
 do {
@@ -177,13 +195,13 @@ add(1, 2, 3, 4); // 10
 
 ### Objects
 - An object is simply a collection of key-value pairs.
-- However, the order of key-value pairs is not preserved.
+- However, the order of these key-value pairs is not preserved.
 
 #### Creating Objects
 ```js
 var dog = { breed:"labrador", color:"brown" }
 
-// OR
+/* OR */
 
 var dog = new Object();
 dog.breed = "labrador";
@@ -221,11 +239,11 @@ Callbacks aren't really a feature of JavaScript like `Object` or `Array`, but in
 
 ```js
 function a() {
-    console.log("Callback function.");
+    console.log("Inside callback function.");
 }
 
 function b(callback) {
-    console.log("Called function.");
+    console.log("Inside called function.");
 
     callback();
 
@@ -234,12 +252,12 @@ function b(callback) {
 
 b(a);
 b(function() {
-    console.log("Callback function.")
+    console.log("Inside callback function.")
 });
 
 ```
 
-Callbacks are extremely useful for asynchronous programming and are typically used for "one-off" asynchronous invocations. They can be used to signal when a particular task has been completed. For example, in the code below, the date is printed to console once `setTimeout()` waits for 1000ms.
+Callbacks are extremely useful for asynchronous programming and are typically used for one-off asynchronous invocations. They can be used to signal when a particular task has been completed. For example, in the code below, the date is printed to console once `setTimeout()` waits for 1000ms.
 
 ```js
 setTimeout(function() {
@@ -250,6 +268,9 @@ console.log("Callbacks are awesome.");
 ```
 
 Notice that "Callbacks are awesome." is printed before the date even though the line of code comes after. This is what makes callbacks unique & extremely useful.
+
+### Finding Out More
+To strengthen your JavaScript further, check out the [JavaScript Guide on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide).
 
 
 ## Task 1 - Practicing Basic JavaScript
