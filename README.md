@@ -531,7 +531,7 @@ This is especially important for web servers. It's pretty common for modern web 
 
 
 ## Task 7 - Building a Simple Web Server (`http`)
-Another useful built-in module is `http`, which makes it easy to create a simple HTTP server.
+Another useful built-in module is `http`, which makes it extremely easy to create a simple HTTP server.
 
 Edit `index.js` as follows:
 
@@ -549,19 +549,19 @@ http.createServer(function (req, res) {
 console.log("Server running at http://127.0.0.1:8000.");
 ```
 
-When I say a basic server, I mean **basic**. This is not a full-featured HTTP server. It can't serve any HTML file or images. In fact, no matter what you request, it will return 'Hello World'.
+Note that this is not a full-featured HTTP server. It can't serve any HTML files or images. In fact, no matter what you request, it will always return 'Hello World'.
 
 Execute your app using `node index.js` and navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000) on your preferred web browser.
 
-Congratulations! You've just built your very own web server!
+Congratulations! You've just built your very own *simple* web server!
 
 Quit your app using `Ctrl` + `C`.
 
-If you want this to be a full-featured web server, then you have to check what was requested, read the appropriate files and send the content back. There's good news, though. People have already done this hard work for you.
-
 
 ## Task 8 - Express
-[Express](http://expressjs.com/) is a framework to help build web applications. The first thing you have to do it install it. Along with the `node` command, you also have access to a command called `npm`. This tool gives you access to an enormous collection of modules created by the community and one of them is Express.
+If you want the server you built in **Task 7** to be a full-featured web server, then you have to check what was requested, read the appropriate files and send the appropriate content back. There's good news, though. People have already done the hard work for you.
+
+[Express](http://expressjs.com/) is a framework to help build web applications. The first thing you have to do is install it. Along with the `node` command, Node.js also gives you access to a command called `npm`. This tool gives you access to an enormous collection of modules created by the community and one of them is Express.
 
 Navigate to your `hello` folder on Terminal and install Express (and its dependencies):
 
@@ -590,7 +590,7 @@ $ mkdir public
 $ node index.js
 ```
 
-You now have a pretty capable static file server. Anything you put in the `/public` folder can now be requested by your browser and displayed. HTML, images, almost anything. For example, if you put an image called `image.png` inside the public folder, you can access it using your browser by going to [http://localhost:8000/image.png](http://localhost:8080/image.png). Of course Express has many many more features, but you can look those up as you continue developing.
+You now have a pretty capable static file server. Anything you put in the `/public` folder can now be requested by your browser and displayed. HTML, images, almost anything. For example, if you put an image called `image.png` inside the public folder, you can access it using your browser by going to [http://localhost:8000/image.png](http://localhost:8080/image.png). Of course Express has many more features, but you can look those up as you continue developing.
 
 
 ## Task 9 - NPM
