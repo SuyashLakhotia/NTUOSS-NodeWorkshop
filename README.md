@@ -340,7 +340,9 @@ Exit REPL by typing `.exit` or pressing `Ctrl` + `D`.
 
 
 ## Task 4 - Hello World
-Create a folder titled `hello` and go into it:
+Alright, let's make our first Node.js app!
+
+Create a folder named `hello`:
 
 ```
 $ mkdir hello
@@ -399,6 +401,9 @@ exports.hello = function () {
 	return "Hello, NTUOSS!";
 }
 ```
+
+`exports.<key>` tells Node that we want the expression to be available in other files that `require()` this one.
+
 Next, open up `index.js` file and modify it so it looks like:
 
 **index.js**
@@ -460,9 +465,11 @@ module.exports = {
 }
 ```
 
+Note that `module.exports` & `exports` reference the same object.
+
 
 ## Task 6 - File I/O
-Node.js also provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent. It ships with a number of core modules. Some examples are:
+Node.js provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent. It ships with a number of core modules. Some examples are:
 - `console`: Sends output to stdout or stderr.
 - `http`: Provides a server and client for HTTP traffic.
 - `fs`: Provides functions to interact with the file system.
@@ -481,7 +488,7 @@ In your `hello` folder, create a text file with the following contents:
 
 What this log data means is not important, but basically each message contains a date, a letter and a value.
 
-The first thing we need to do is read the contents of the file. We can do this using the `fs` module provided by Node.js. Create a new file titled `my_parser.js` and type in the following:
+We can read the contents of this file using the `fs` module provided by Node.js. Create a new file titled `my_parser.js` and type in the following:
 
 **my_parser.js**
 
@@ -507,6 +514,7 @@ fs.readFile('log.txt', function (err, logData) {
 The `fs` module has a function named `readFile` that takes a file path and a callback. The callback will be invoked when the file is done being read. The file data comes in the form of a Buffer, which is basically a byte array. We can convert it to a string using the `toString()` function.
 
 Execute the file:
+
 ```
 $ node my_parser.js
 2016-08-09T13:50:33.166Z A 2
@@ -519,7 +527,7 @@ $ node my_parser.js
 ### Asynchronous Callbacks
 As can be seen above, the typical pattern in Node.js is to use asynchronous callbacks. Basically you're telling Node to do something and when it's done, Node will call your function (callback). This is because Node is single-threaded. While you're waiting on the callback to fire, Node can go off and do other things instead of blocking until the request is finished.
 
-This is especially important for web servers. It's pretty common in modern web applications to access databases. While you're waiting for the database to return results, Node can process more requests. This allows you to handle thousands of concurrent connections with very little overhead in contrast to creating a separate thread for each connection.
+This is especially important for web servers. It's pretty common for modern web applications to frequently access databases. While you're waiting for the database to return results, Node can process more requests. This allows you to handle thousands of concurrent connections with very little overhead in contrast to creating a separate thread for each connection.
 
 
 ## Task 7 - Building a Simple Web Server (`http`)
