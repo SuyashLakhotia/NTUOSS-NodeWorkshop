@@ -169,7 +169,7 @@ do {
 #### for
 ```js
 for (var i = 0; i < 10; i++) {
-    // executes 10 times
+	// executes 10 times
 }
 ```
 
@@ -235,7 +235,7 @@ var p = new Person("Barack", "Obama");
 p.fullName(); // "Barack Obama"
 ```
 
-### Callback
+### Callbacks
 Callbacks aren't really a feature of JavaScript like `Object` or `Array`, but instead they're a certain way to use functions. Since functions in JavaScript are a type of object, they can be passed to other functions and can even be assigned to variables. These functions can be defined previously or in-line.
 
 ```js
@@ -258,7 +258,7 @@ b(function() {
 
 ```
 
-Callbacks are extremely useful for asynchronous programming and are typically used for one-off asynchronous invocations. They can be used to signal when a particular task has been completed. For example, in the code below, the date is printed to console once `setTimeout()` waits for 1000ms.
+Callbacks are extremely useful for asynchronous programming and are typically used for one-off asynchronous invocations. For example, they can be used to signal when a particular task has been completed. In the code below, the date is printed to console once `setTimeout()` waits for 1000ms.
 
 ```js
 setTimeout(function() {
@@ -285,7 +285,7 @@ Write a program that uses `console.log()` to print all the numbers from 1 to 100
 Write a function `range` that takes two arguments, `start` & `end`, and returns an array containing all the numbers from `start` up to (and including) `end`. Next, write a function `sum` that takes in an array of numbers and returns the sum of these numbers. Print `sum(range(1, 10))` and check whether it returns 55.
 
 ### Task 1.3
-Write a constructor `Vector` that represents a vector in two-dimensional space. It takes `x` and `y` parameters, which it should save to properties of the same name. Give `Vector` two methods, `plus` & `minus`, that takes another vector as a parameter and returns a new vector that has the sum or difference of the two vectors’ x and y values. Add a method `length` which computes the length of the vector i.e. the distance of the point (x, y) from the origin (0, 0).
+Write a constructor `Vector` that represents a vector in two-dimensional space. It takes `x` and `y` parameters, which it should save to properties of the same name. Give `Vector` two methods, `plus` & `minus`, that take another vector as a parameter and return a new vector that has the sum or difference of the two vectors’ x and y values. Add a method `length` which computes the length of the vector i.e. the distance of the point (x, y) from the origin (0, 0).
 
 ### Task 1.4
 Define a function `add` that takes in two numbers as parameters and a third `callback` parameter. This function should call the callback function, passing the result of the addition to the callback function as an argument. Call `add`, passing two numbers and a callback (defined in-line). The callback should print "The sum is: \__".
@@ -302,14 +302,14 @@ Node.js is an open source, cross-platform runtime environment for server-side Ja
 - JSON-based REST APIs
 - Web / Mobile-Web Apps
 - Network Apps
-- **NOT** for CPU intensive work
+- **NOT** for CPU-Intensive Work
 
 ### Setup
 1. Install [Node.js](https://nodejs.org/).
 2. Install [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git) if you haven't already.
 3. Get a text editor. I recommend either [Sublime Text](http://www.sublimetext.com/) or [Atom](https://atom.io/). *Install the command line tools for your preferred text editor to open files/directories quicker.*
 
-- For Windows users, please use *Git Bash* that comes installed with *Git* to emulate the UNIX commands used throughout the workshop.
+**Note -** For Windows users, please use *Git Bash* that comes installed with *Git* to emulate the UNIX commands used throughout the workshop.
 
 
 ## Task 3 - REPL
@@ -329,7 +329,7 @@ Try out the following JavaScript commands to become familiar with REPL:
 > console.log(a);
 [ 1, 2, 3 ]
 
-> a.forEach(function (z) { console.log(z); });
+> a.forEach(function(z) { console.log(z); });
 1
 2
 3
@@ -350,7 +350,7 @@ $ mkdir hello
 $ cd hello
 ```
 
-Next, create an empty `index.js` file in that folder and open it in Sublime Text:
+Next, create an empty `index.js` file in that folder and open it in Sublime Text (or your preferred text editor):
 
 ```
 $ touch index.js
@@ -371,7 +371,7 @@ Save and exit the file. Execute your application by running the following comman
 $ node index.js
 ```
 
-You should see the following output on Terminal:
+You should see the following output on Terminal/Git Bash:
 
 ```
 Hello, NTUOSS!
@@ -444,14 +444,14 @@ console.log(greet.hello());
 console.log(greet.konichiwa());
 ```
 
-Execute your application. The output should be as follows:
+Execute your application. The output should be:
 
 ```
 Hello, NTUOSS!
 Konichiwa, NTUOSS!
 ```
 
-Another way of handling exports is as follows:
+Another way of handling exports is:
 
 **greet.js**
 
@@ -470,7 +470,8 @@ Note that `module.exports` & `exports` reference the same object.
 
 
 ## Task 6 - File I/O
-Node.js provides a rich library of various JavaScript modules which simplifies the development of web applications using Node.js to a great extent. It ships with a number of core modules. Some examples are:
+Node.js provides a rich library of various JavaScript 'modules', which simplify the development of web applications to a great extent. It ships with a number of core modules. Some examples are:
+
 - `console`: Sends output to stdout or stderr.
 - `http`: Provides a server and client for HTTP traffic.
 - `fs`: Provides functions to interact with the file system.
@@ -512,7 +513,7 @@ fs.readFile('log.txt', function (err, logData) {
 });
 ```
 
-The `fs` module has a function named `readFile` that takes a file path and a callback. The callback will be invoked when the file is done being read. The file data comes in the form of a Buffer, which is basically a byte array. We can convert it to a string using the `toString()` function.
+The `fs` module has a function named `readFile` that takes in a file path and a callback. The callback will be invoked when the file is done being read. The file data comes in the form of a Buffer, which is basically a byte array. We can convert it to a string using the `toString()` function.
 
 Execute the file:
 
@@ -550,7 +551,7 @@ http.createServer(function (req, res) {
 console.log("Server running at http://127.0.0.1:8000.");
 ```
 
-Note that this is not a full-featured HTTP server. It can't serve any HTML files or images. In fact, no matter what you request, it will always return 'Hello World'.
+Note that this is not a full-featured HTTP server. It can't serve any HTML files or images. In fact, no matter what you request, it will always return 'Hello, NTUOSS!'.
 
 Execute your app using `node index.js` and navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000) on your preferred web browser.
 
@@ -560,15 +561,15 @@ Quit your app using `Ctrl` + `C`.
 
 
 ## Task 8 - Express
-If you want the server you built in **Task 7** to be a full-featured web server, then you have to check what was requested, read the appropriate files and send the appropriate content back. There's good news, though. People have already done the hard work for you.
+If you want the server you built in **Task 7** to be a full-featured web server, then you have to check what was requested, read the appropriate files and send the relevant content back. There's good news, though. People have already done the hard work for you.
 
-[Express](http://expressjs.com/) is a framework to help build web applications. The first thing you have to do is install it. Along with the `node` command, Node.js also gives you access to a command called `npm`. This tool gives you access to an enormous collection of modules created by the community and one of them is Express.
+[Express](http://expressjs.com/) is a framework to help build web applications. The first thing you have to do is install it. Along with the `node` command, Node.js also comes with a command called `npm`. This tool gives you access to an enormous collection of modules created by the community and one of them is Express.
 
 Navigate to your `hello` folder on Terminal and install Express (and its dependencies):
 
 ```
 $ cd path/to/hello
-$ npm install express # ignore the warnings for now
+$ npm install express	# ignore the warnings for now
 ```
 
 When you install a module, it will put it in a `node_modules` folder inside your application directory. You can now `require()` it like any built-in module. Let's create a basic static file server using Express.
@@ -591,7 +592,9 @@ $ mkdir public
 $ node index.js
 ```
 
-You now have a pretty capable static file server. Anything you put in the `/public` folder can now be requested by your browser and displayed. HTML, images, almost anything. For example, if you put an image called `image.png` inside the public folder, you can access it using your browser by going to [http://localhost:8000/image.png](http://localhost:8080/image.png). Of course Express has many more features, but you can look those up as you continue developing.
+You now have a pretty capable static file server. Anything you put in `/public` can now be requested by your browser and displayed. HTML, images, almost anything. For example, if you put an image called `image.png` inside the public folder, you can access it using your browser by going to [http://localhost:8000/image.png](http://localhost:8080/image.png).
+
+Express comes with many more features, but you can look those up as you continue developing.
 
 
 ## Task 9 - NPM
