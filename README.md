@@ -291,7 +291,7 @@ Write a constructor `Vector` that represents a vector in two-dimensional space. 
 Define a function `add` that takes in two numbers as parameters and a third `callback` parameter. This function should call the callback function, passing the result of the addition to the callback function as an argument. Call `add`, passing two numbers and a callback (defined in-line). The callback should print "The sum is: \__".
 
 ### Solutions
-Solutions are available [here](/Task 1 Solutions/).
+Solutions are available [here](/Task%201%20Solutions/).
 
 
 ## Task 2 - Introduction to Node.js
