@@ -1,4 +1,4 @@
-# NTUOSS-NodeWorkshop
+# NTUOSS Node.js Workshop
 
 *by Suyash Lakhotia for NTU Open Source Society*
 
